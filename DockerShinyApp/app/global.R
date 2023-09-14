@@ -33,7 +33,10 @@ library(shinyjs, quietly = TRUE, warn.conflicts = FALSE)
 if (!is_ec2() & !is_ecs()) {
   use_credentials(profile = "ahrq")
 } else {
-  creds <- locate_credentials()
+  creds <- locate_credentials(
+    key = Sys.getenv("PCOOMAN_AWS_USERNAME"),
+    secret = Sys.getenv("PCOOMAN_AWS_PASSWORD")
+  )
   Sys.setenv("AWS_ACCESS_KEY_ID" = creds$key,
            "AWS_SECRET_ACCESS_KEY" = creds$secret,
            "AWS_DEFAULT_REGION" = creds$region,
