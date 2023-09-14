@@ -1,3 +1,8 @@
+install.packages(
+  c('aws.signature', 'aws.ec2metadata', 'aws.s3'), 
+  repos = c(cloudyr = 'http://cloudyr.github.io/drat', getOption('repos'))
+)
+
 library(shiny)
 library(shinydashboard)
 library(dplyr)
