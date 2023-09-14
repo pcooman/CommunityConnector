@@ -1,4 +1,8 @@
 install.packages(
+  'shinycssloaders', 
+  repos='http://cran.rstudio.com/'
+)
+install.packages(
   c('aws.signature', 'aws.ec2metadata', 'aws.s3'), 
   repos = c(cloudyr = 'http://cloudyr.github.io/drat', getOption('repos'))
 )
